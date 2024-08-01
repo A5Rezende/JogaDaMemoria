@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atualizar Dados</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style_atualiza_cad.css">
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <main>
+    <div>
+      <h1>Atualizar Dados</h1>
+      <form action="atualizar_cad.php" method="POST">
+<!--
+        <?php
+          $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+          if (!empty($dados['submit'])) {
+            $query_cadastro = "UPDATE cadastros  
+                  SET NOME ('" . $dados['nome_completo'] . "','" . $dados['dtnasc'] . "', '" . $dados['cpf'] . "', '" . $dados['telefone'] . "', '" . $dados['email'] . "',
+                  '" . $dados['username'] . "', '" . $senha_cript . "')";
+
+            $cadastro = $conn->prepare($query_cadastro);
+
+            $cadastro->execute();
+
+            if ($cadastro->rowCount()) {
+              echo '<script> alert("Usuário cadastrado com sucesso!") </script>';
+              header("Location: ../login/login.php");
+            } else {
+              echo '<script> alert("Usuário não pôde ser cadastrado") </script>';
+
+            }
+          }
+          ?>
+-->
+        <label>Nome Completo</label><br>
+        <input id="nome_input" type="text" required minlength="5"><br><br>
+
+        <label>Data de Nascimento</label><br>
+        <input id="dt_nasc_input" required placeholder="aaaaMMdd" minlength="5" disabled><br><br>
+
+        <label>CPF</label><br>
+        <input id="cpf_input" required minlength="5" disabled><br><br>
+
+        <label>Telefone</label><br>
+        <input id="telefone_input" type="tel" required minlength="5"><br><br>
+
+        <label>E-mail</label><br>
+        <input id="email_input" type="text" required minlength="5"><br><br>
+
+        <label>Username</label><br>
+        <input id="username_input" type="text" required minlength="5" disabled><br><br>
+
+        <label>Senha</label><br>
+        <input id="senha_input" type="password" required minlength="5" disabled><br><br><br>
+
+        <form style="display: inline" action="../jogo/jogo.html" method="get"><button id="save_button">Salvar</button>
+        </form>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>
